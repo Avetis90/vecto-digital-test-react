@@ -1,0 +1,160 @@
+@use '../../styles/_colors';
+@use '../../styles/_typography';
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 160px;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .overlay {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: transparent linear-gradient(90deg, #040404 0%, #040404FA 21%, #04040400 100%) 0 0 no-repeat padding-box;
+    transition: width ease .3s;
+    z-index: 9;
+  }
+
+  .menuItem {
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: width ease .3s, border-radius ease .2s;
+
+    .icon {
+      width: 30px;
+    }
+
+    .title {
+      @extend %paragraph-3;
+      line-height: 48px;
+      width: 0;
+      overflow: hidden;
+      font-size: 36px;
+      font-weight: bold;
+      color: colors.$white;
+      text-overflow: ellipsis ;
+      white-space: nowrap;
+    }
+
+    &.active, &:hover:not(.searchItem) {
+      background: colors.$azure;
+    }
+
+    &.avatar {
+      padding: 0;
+      position: absolute;
+      top: -150px;
+      transition: top ease .3s;
+      opacity: 0;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  .menuFooterLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    bottom: -200px;
+    left: 60px;
+    transition: bottom ease .3s;
+    opacity: 0;
+
+    .menuFooterLink {
+      @extend %body-2;
+      color: colors.$gray;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &.active, &:hover {
+        color: colors.$white;
+      }
+    }
+
+  }
+
+  &.expanded {
+    width: 100%;
+
+    .menuItem {
+      width: 320px;
+      border-radius: 12px;
+      gap: 50px;
+      opacity: 1;
+
+      &.avatar {
+        gap: 25px;
+        top: 60px;
+      }
+
+      .title {
+        width: 100%;
+      }
+
+      &.active {
+        justify-content: flex-start;
+
+        .title {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .overlay {
+      width: 100%;
+    }
+
+    .menuFooterLinks {
+      bottom: 65px;
+      opacity: 1;
+    }
+  }
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 10;
+  max-width: max-content;
+  padding: 200px 39px 65px;
+  height: 100%;
+}
+
+
+.searchInput {
+  padding: 8px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: colors.$white;
+  font-size: 32px;
+
+  &::placeholder {
+    color: colors.$white;
+  }
+}
+
+
+
+

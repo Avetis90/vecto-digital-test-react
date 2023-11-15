@@ -1,0 +1,18 @@
+@use '../../../styles/_colors';
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(colors.$black, .6);
+  transition: opacity ease .3s;
+  z-index: 0;
+  opacity: 0;
+
+  &.loading {
+    z-index: 99;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,39 @@
+@use '../../../styles/mixins';
+@use '../../../styles/typography';
+
+.h1 {
+  @extend %heading-1
+}
+
+.h2 {
+  @extend %heading-2
+}
+
+.paragraph1 {
+  @extend %paragraph-1
+}
+
+.paragraph2 {
+  @extend %paragraph-2
+}
+
+.paragraph3 {
+  @extend %paragraph-3
+}
+
+.paragraph4 {
+  @extend %paragraph-4
+}
+
+.body1 {
+  @extend %body-1
+}
+
+.body2 {
+  @extend %body-2
+}
+
+.small {
+  @extend %small
+}
+

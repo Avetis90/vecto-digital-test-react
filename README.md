@@ -44,3 +44,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Folder structure
+- `src`
+  - `components` (with custom UI library for current design and other global components)
+  - `config` ( configuration files for routes, environment, etc...)
+  - `constants` ( to keep constant(static) data/information separately )
+  - `data` ( for mock data )
+  - `pages` ( for all page(root) components )
+  - `styles` ( have used Scss for styling and all files are logically separated )
+  - `types` ( for typescript )
+  - `utils` ( for helper/reusable functions )

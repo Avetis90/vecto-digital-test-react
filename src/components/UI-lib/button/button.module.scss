@@ -1,0 +1,49 @@
+@use '../../../styles/_colors';
+@use '../../../styles/typography';
+
+.main {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  gap: 12px;
+}
+
+.primary {
+  background: linear-gradient(128deg, colors.$blue-light, colors.$blue-dark);
+  color: colors.$white;
+  &:hover {
+    box-shadow: rgba(colors.$blue-light, 0.24) 10px 15px 12px;
+  }
+}
+
+.secondary {
+  background-color: colors.$white;
+  color: colors.$black;
+  &:hover {
+    box-shadow: rgba(colors.$white, 0.24) 10px 15px 12px;
+  }
+}
+
+.lg {
+  @extend %paragraph-3;
+  width: 240px;
+  height: 72px;
+}
+
+.md {
+  @extend %body-2;
+  width: 200px;
+  height: 60px;
+}
+
+.sm {
+  @extend %small;
+  width: 160px;
+  height: 48px;
+}

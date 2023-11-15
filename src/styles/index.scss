@@ -1,0 +1,15 @@
+@use "_colors";
+@use "_fonts";
+
+@import "normalize";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: fonts.$main, sans-serif;
+  color: colors.$white
+}
+
